@@ -30,26 +30,26 @@
       stage('Build') {
          steps {
 			
-			echo "Cloning GitHub repository for Task Manager Front End Project"
+			echo "Cloning GitHub repository for Project Manager Front End Project"
 			
 			// Get some code from a GitHub repository
-            git 'https://github.com/SumeetKC/taskmanager.git';
+            git 'https://github.com/SumeetKC/Project-Manager.git';
 			
-			echo "Starting build for Task Manager...."
+			echo "Starting build for Project Manager...."
 			
-			     //build 'Task Manager'
+			     //build 'Project Manager'
 			     bat "npm install"
 			     bat "ng build --aot --prod"
              
 				println "BUILD NUMBER = $BUILD_NUMBER"
 				println "Build Success.."
 				
-			echo "Cloning GitHub repository for Task Manager Service Project"
+			echo "Cloning GitHub repository for Project Manager Service Project"
 			
             // Get some code from a GitHub repository
-            git 'https://github.com/SumeetKC/TaskManagerService.git'
+            git 'https://github.com/SumeetKC/ProjectManagerService.git'
 			
-			echo "Starting build for Task Manager Service...."
+			echo "Starting build for Project Manager Service...."
 
             // Run Maven on a Unix agent.
             //sh "mvn -Dmaven.test.failure.ignore=true clean package"
